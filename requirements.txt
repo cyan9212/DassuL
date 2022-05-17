@@ -8,4 +8,4 @@ numpy==1.22.3
 tqdm==4.64.0
 Jinja2==2.11.3
 Python==3.8.10
-discord==1.7.3
+discord==1.7.3 
