@@ -32,7 +32,6 @@
 - 각 카테고리 별로 binary-classification model을 생성했습니다. 이 모델들은 각 카테고리의 혐오표현이 있으면 1, 없으면 0을 반환합니다.
 - 모델들은 전부 [huggingface의 bert](https://huggingface.co/docs/transformers/main/en/model_doc/bert#bert)를 보고, 마지막 layer에 classification layer를 추가했습니다. 이 layer는 각 모델의 마지막 output만큼을 입력으로 받고, 출력으로 1개의 값을 반환합니다.
 - 모델의 성능을 최대한 높이기 위해 [조기종료 기법](https://github.com/Bjarten/early-stopping-pytorch)을 사용했습니다. 
-- 모델이 너무 빠르게 수렴했기 때문에, `lr`을 1/10으로 줄였습니다.
 - `loss_fn`을 [BCEWithLogitLoss](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html)를 사용했습니다. 이 함수는 출력으로 `sigmoid`를 하지 않아도 함수 내에서 취하기 때문에, 좀 더 편리하게 사용할 수 있습니다. 
 - 나머지 파라미터는 default값과 동일합니다.
 ### 3.1.2. Second model
